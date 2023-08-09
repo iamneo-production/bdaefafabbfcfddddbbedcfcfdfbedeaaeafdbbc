@@ -26,6 +26,13 @@ function App() {
     option4: "Green",
   };
 
+  const opt2 = {
+    option1: "Mahatma Gandhi",
+    option2: "Jawarharlal Nehru",
+    option3: "Donald Trump",
+    option4: "Barack Obama"
+  }
+
   const questions = [
     { question: "Who is the father of our nation?", answer: "Green" },
     { question: "What color is are the leaves?", answer: "Green" },
