@@ -8,7 +8,7 @@ const Button = (props) => {
         padding: "0.5rem 1rem", 
         //border: "none",
         borderRadius: "4px",
-        color: "purple",
+        color: "black",
         cursor: "pointer",
         fontSize: "1rem",
       };
