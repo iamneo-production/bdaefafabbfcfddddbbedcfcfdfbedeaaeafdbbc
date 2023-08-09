@@ -1,44 +1,44 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Button from "./components/UI/Button/Button";
 import Card from "./components/UI/Card/Card";
 import Banner from "./components/UI/Banner/Banner";
 
 function App() {
-  const [quizStarted, setQuizStarted] = useState(true);
-  const [correctAnswerCount, setCorrectAnswerCount] = useState(0);
-  const [questionAttemptCount, setQuestionAttemptCount] = useState(0);
-  const [isCardVisible, setCardVisible] = useState(false);
-  const [showResults, setShowResults] = useState(false);
-  const [isBannerVisible, setBannerVisible] = useState(false);
+  const [start, setStart] = useState(true);
+  const [attempt, correctAnswerMarkUpdate] = useState(0);
+  const [qsnAttempt, setqsnAttempt] = useState(0);
+  const [card, setCard] = useState(false);
+  const [result, setResult] = useState(false);
+  const [banner, setBanner] = useState(false);
 
-  const handleStartQuiz = () => {
-    setQuizStarted(false);
-    setCardVisible(true);
-    setCorrectAnswerCount(0);
-    setQuestionAttemptCount(0);
-    setBannerVisible(false);
+  const handleStart = () => {
+    setStart(false);
+    setCard(true);
+    correctAnswerMarkUpdate(0);
+    setqsnAttempt(0);
+    setBanner(false);
   };
 
-  const options = {
+  const opt = {
     option1: "Blue",
     option2: "Red",
     option3: "Yellow",
     option4: "Green",
   };
 
-  const quizQuestions = [
+  const questions = [
     { question: "Who is the father of our nation?", answer: "Green" },
-    { question: "What color are the leaves?", answer: "Green" },
+    { question: "What color is are the leaves?", answer: "Green" },
     { question: "What color is the sky?", answer: "Blue" },
     { question: "What color is the sky?", answer: "Blue" },
-    { question: "What color is fire?", answer: "Red" },
+    { question: "What color is the fire?", answer: "Red" },
   ];
 
-  const handleShowResults = () => {
-    setQuizStarted(true);
-    setBannerVisible(true);
-    setCardVisible(false);
-    setShowResults(false);
+  const handleResult = () => {
+    setStart(true);
+    setBanner(true);
+    setCard(false);
+    setResult(false);
   };
 
   return (
@@ -46,30 +46,30 @@ function App() {
       <div>
         <div>
           <h1>Quiz App</h1>
-          <i>learn react</i>
         </div>
 
-        {isBannerVisible && <Banner score={correctAnswerCount} />}
-        {isCardVisible && (
+        {banner && <Banner score={attempt} />}
+        {card && (
           <div>
-            {quizQuestions.map((question, index) => (
+            {" "}
+            {questions.map((q, index) => (
               <Card
                 key={index}
-                question={question.question}
-                correctAnswerMarkUpdate={setCorrectAnswerCount}
-                correctAnswerCount={correctAnswerCount}
-                options={options}
-                correctAnswer={question.answer}
-                setQuestionAttemptCount={setQuestionAttemptCount}
-                questionAttemptCount={questionAttemptCount}
-                setShowResults={setShowResults}
-                isQuestionAttempted={questionAttemptCount}
+                question={q.question}
+                correctAnswerMarkUpdate={correctAnswerMarkUpdate}
+                attempt={attempt}
+                options={opt}
+                answer={q.answer}
+                setQsns={setqsnAttempt}
+                qsn={qsnAttempt}
+                setCard={setResult}
+                qsnAttempt={qsnAttempt}
               />
             ))}
           </div>
         )}
-        {showResults && <Button onClick={handleShowResults}>Show Results</Button>}
-        {quizStarted && <Button onClick={handleStartQuiz}>Start Quiz</Button>}
+        {result && <Button onClick={handleResult}>Show Results</Button>}
+        {start && <Button onClick={handleStart}>Start Quiz</Button>}
       </div>
     </div>
   );
