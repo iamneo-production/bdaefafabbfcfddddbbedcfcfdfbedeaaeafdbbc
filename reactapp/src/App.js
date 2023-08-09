@@ -28,7 +28,7 @@ function App() {
 
   const questions = [
     { question: "Who is the father of our nation?", answer: "Green" },
-    { question: "What color is the leaves?", answer: "Green" },
+    { question: "What color is are the leaves?", answer: "Green" },
     { question: "What color is the sky?", answer: "Blue" },
     { question: "What color is the sky?", answer: "Blue" },
     { question: "What color is the fire?", answer: "Red" },
