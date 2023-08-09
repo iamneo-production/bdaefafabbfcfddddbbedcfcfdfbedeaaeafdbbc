@@ -3,12 +3,12 @@ const Button = (props) => {
     const { btnName = props.children, onClick, marked } = props;
 
     const buttonStyle = {
-        backgroundColor: "#F11A7B", 
+        backgroundColor: "lightpurple", 
         margin: "0.5rem", 
         padding: "0.5rem 1rem", 
-        border: "none",
+        //border: "none",
         borderRadius: "4px",
-        color: "white",
+        color: "purple",
         cursor: "pointer",
         fontSize: "1rem",
       };
