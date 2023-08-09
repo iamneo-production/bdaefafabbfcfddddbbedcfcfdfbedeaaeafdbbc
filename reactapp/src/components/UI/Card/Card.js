@@ -19,6 +19,15 @@ const Card = ({
     options.option4,
   ];
 
+  const cardStyle = {
+    margin: "20px auto",
+    padding: "20px",
+    backgroundColor: "#FFDAB9", 
+    borderRadius: "10px",
+    boxShadow: "0px 2px 6px rgba(0, 0, 0, 0.1)",
+    width: "300px",
+  };
+
   const [marked, setMarked] = useState(false);
 
   const click = (clicked) => {
@@ -32,7 +41,7 @@ const Card = ({
   };
 
   return (
-    <div>
+    <div style = {cardStyle}>
       <h4>{question}</h4>
       <div>
         {optionsArray.map((option, index) => (
