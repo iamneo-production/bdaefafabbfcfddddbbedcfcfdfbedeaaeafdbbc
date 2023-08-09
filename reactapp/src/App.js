@@ -2,6 +2,7 @@ import { useState } from "react";
 import Button from "./components/UI/Button/Button";
 import Card from "./components/UI/Card/Card";
 import Banner from "./components/UI/Banner/Banner";
+import "./style.css"
 
 function App() {
   const [start, setStart] = useState(true);
