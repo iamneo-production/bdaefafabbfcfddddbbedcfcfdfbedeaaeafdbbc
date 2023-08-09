@@ -19,26 +19,46 @@ function App() {
     setBanner(false);
   };
 
-  const opt = {
+  const specialOpt = {
+    option1: "Mahatma Gandhi",
+    option2: "Jawarharlal Nehru",
+    option3: "Donald Trump",
+    option4: "Barack Obama",
+  };
+
+  const regularOpt = {
     option1: "Blue",
     option2: "Red",
     option3: "Yellow",
     option4: "Green",
   };
 
-  const opt2 = {
-    option1: "Mahatma Gandhi",
-    option2: "Jawarharlal Nehru",
-    option3: "Donald Trump",
-    option4: "Barack Obama"
-  }
-
   const questions = [
-    { question: "Who is the father of our nation?", answer: "Green" },
-    { question: "What color is are the leaves?", answer: "Green" },
-    { question: "What color is the sky?", answer: "Blue" },
-    { question: "What color is the sky?", answer: "Blue" },
-    { question: "What color is the fire?", answer: "Red" },
+    {
+      question: "Who is the father of our nation?",
+      answer: "Mahatma Gandhi",
+      options: specialOpt,
+    },
+    {
+      question: "What color is the leaves?",
+      answer: "Green",
+      options: regularOpt,
+    },
+    {
+      question: "What color is the sky?",
+      answer: "Blue",
+      options: regularOpt,
+    },
+    {
+      question: "What color is the sky?",
+      answer: "Blue",
+      options: regularOpt,
+    },
+    {
+      question: "What color is the fire?",
+      answer: "Red",
+      options: regularOpt,
+    },
   ];
 
   const handleResult = () => {
@@ -65,7 +85,7 @@ function App() {
                 question={q.question}
                 correctAnswerMarkUpdate={correctAnswerMarkUpdate}
                 attempt={attempt}
-                options={opt}
+                options={q.options}
                 answer={q.answer}
                 setQsns={setqsnAttempt}
                 qsn={qsnAttempt}
@@ -83,3 +103,4 @@ function App() {
 }
 
 export default App;
+
