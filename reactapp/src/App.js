@@ -70,9 +70,9 @@ function App() {
   };
 
   return (
-    <div>
+    <div className = "container">
       <div>
-        <div>
+        <div className = "container">
           <h1>Quizz App</h1>
         </div>
 
